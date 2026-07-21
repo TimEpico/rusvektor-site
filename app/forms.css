@@ -1,0 +1,45 @@
+.calc-form input,
+.calc-form select,
+.calc-form textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 0 13px;
+  border: 1px solid #55585b;
+  border-radius: 0;
+  background: #222527;
+  color: #fff;
+  font: 15px Arial, sans-serif;
+}
+
+.calc-form textarea {
+  height: auto;
+  padding-top: 12px;
+  resize: vertical;
+}
+
+.calc-form input:focus,
+.calc-form select:focus,
+.calc-form textarea:focus {
+  outline: 2px solid var(--yellow);
+  outline-offset: 1px;
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.form-error {
+  margin: 15px 0 0;
+  color: #ff9a90;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
