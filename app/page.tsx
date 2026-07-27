@@ -75,7 +75,7 @@ export default function Home() {
             <span>РУСВЕКТОР<small>строительство · безопасность</small></span>
           </a>
           <nav aria-label="Основная навигация">
-            <a href="#services">Услуги</a><a href="#calculator">Калькулятор</a><a href="#projects">Объекты</a><a href="#contacts">Контакты</a>
+            <a href="/services">Услуги</a><a href="#calculator">Калькулятор</a><a href="#projects">Объекты</a><a href="/licenses">Лицензии</a><a href="#contacts">Контакты</a>
           </nav>
           <a className="phone" href="tel:+74951339013">+7 (495) 133-90-13</a>
         </header>
@@ -92,7 +92,7 @@ export default function Home() {
       <section className="services shell" id="services">
         <div className="section-head"><p>Возможности компании</p><h2>Один подрядчик для <em>сложных объектов</em></h2></div>
         <div className="service-grid">
-          {services.map(([number, title, text]) => <article className="service" key={number}><b>{number}</b><h3>{title}</h3><p>{text}</p><a href="#calculator" aria-label={`Рассчитать ${title}`}>→</a></article>)}
+          {services.map(([number, title, text]) => <article className="service" key={number}><b>{number}</b><h3>{title}</h3><p>{text}</p><a href="/services" aria-label={`Смотреть услуги ${title}`}>→</a></article>)}
         </div>
       </section>
 

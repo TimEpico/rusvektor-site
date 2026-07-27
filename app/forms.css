@@ -43,3 +43,39 @@
   height: 1px !important;
   overflow: hidden !important;
 }
+
+.inner-page { background: var(--paper); }
+.inner-page .header { max-width: none; width: 100%; padding-inline: max(24px, calc((100% - 1180px) / 2)); background: var(--ink); }
+.inner-page .header nav { margin-left: auto; }
+.inner-hero { padding: 118px 0 82px; }
+.inner-hero p { margin: 0 0 18px; color: var(--yellow); font-size: 12px; font-weight: 700; letter-spacing: 1.2px; }
+.inner-hero h1 { max-width: 900px; margin: 0; font-size: clamp(48px, 7vw, 86px); letter-spacing: -3px; line-height: .96; }
+.inner-hero > span { display: block; max-width: 560px; margin-top: 30px; color: #62635e; font-size: 18px; line-height: 1.55; }
+.service-directory { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid #c8c8c4; }
+.service-group { min-height: 400px; padding: 34px; border-right: 1px solid #c8c8c4; border-bottom: 1px solid #c8c8c4; }
+.service-group:nth-child(odd) { border-left: 1px solid #c8c8c4; }
+.service-group b { color: var(--yellow); font-size: 13px; }
+.service-group h2 { margin: 42px 0 22px; font-size: clamp(28px, 3vw, 42px); letter-spacing: -1.5px; }
+.service-group ul { display: grid; gap: 9px; margin: 0 0 28px; padding: 0; list-style: none; color: #555650; font-size: 15px; line-height: 1.35; }
+.service-group li::before { content: "—"; margin-right: 9px; color: var(--yellow); }
+.license-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-bottom: 120px; }
+.license-card { padding: 20px; border: 1px solid #c8c8c4; background: #f8f8f6; }
+.license-card > a:first-child { display: block; height: 320px; overflow: hidden; background: #e7e7e3; }
+.license-card img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .25s ease; }
+.license-card > a:first-child:hover img { transform: scale(1.03); }
+.license-card h2 { margin: 23px 0 8px; font-size: 24px; letter-spacing: -1px; line-height: 1.05; }
+.license-card p { min-height: 38px; margin: 0 0 16px; color: #62635e; font-size: 14px; line-height: 1.35; }
+
+@media (max-width: 800px) {
+  .inner-page .header { padding-inline: 17px; }
+  .inner-page .header nav { display: none; }
+  .inner-hero { padding: 74px 0 52px; }
+  .inner-hero h1 { font-size: 49px; }
+  .inner-hero > span { font-size: 16px; }
+  .service-directory, .license-grid { grid-template-columns: 1fr; }
+  .service-group, .service-group:nth-child(odd) { min-height: auto; border-left: 1px solid #c8c8c4; }
+  .service-group { padding: 27px 21px; }
+  .service-group h2 { margin-top: 28px; }
+  .license-grid { gap: 14px; padding-bottom: 72px; }
+  .license-card > a:first-child { height: 390px; }
+}
