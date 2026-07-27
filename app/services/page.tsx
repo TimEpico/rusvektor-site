@@ -32,6 +32,6 @@ export default function ServicesPage() {
     <section className="service-directory shell">
       {groups.map((group, index) => <article className="service-group" key={group.title}><b>0{index + 1}</b><h2>{group.title}</h2><ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul><Link className="text-link" href="/#calculator">Рассчитать задачу <span>→</span></Link></article>)}
     </section>
-    <section className="contacts"><div className="shell contact-grid"><div><p className="eyebrow">Начнём с задачи</p><h2>Нужен расчёт или консультация?</h2></div><div className="contact-links"><a href="tel:+74951339013">+7 (495) 133-90-13</a><a href="mailto:info@rusvektor.ru">info@rusvektor.ru</a></div></div></section>
+    <section className="contacts"><div className="shell contact-grid"><div><p className="eyebrow">Начнём с задачи</p><h2>Нужен расчёт или консультация?</h2><p>Фиксированных цен на официальном сайте нет: состав работ и смету формируем после изучения объекта.</p></div><div className="contact-links"><a href="tel:+74951339013">+7 (495) 133-90-13</a><a href="mailto:info@rusvektor.ru">info@rusvektor.ru</a><span>125367, Москва, Полесский проезд, д. 16, стр. 1, подъезд 2, этаж 2, офис 229<br />м. Щукинская</span></div></div></section>
   </main>;
 }

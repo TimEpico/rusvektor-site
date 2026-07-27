@@ -122,7 +122,7 @@ export default function Home() {
 
       <section className="safety-band"><div className="shell safety-content"><p className="eyebrow">Пожарная безопасность</p><h2>Проектируем защиту, которая работает <em>в критический момент.</em></h2><a className="text-link" href="#contacts">Обсудить систему <span>→</span></a></div></section>
 
-      <section className="contacts" id="contacts"><div className="shell contact-grid"><div><p className="eyebrow">Начнём с задачи</p><h2>Нужен расчёт или консультация?</h2><p>Расскажите, что требуется на объекте. Секретарь передаст заявку профильному специалисту.</p></div><div className="contact-links"><a href="tel:+74951339013">+7 (495) 133-90-13</a><a href="mailto:info@rusvektor.ru">info@rusvektor.ru</a><span>Москва, Полесский проезд, 16, стр. 1</span></div></div></section>
+      <section className="contacts" id="contacts"><div className="shell contact-grid"><div><p className="eyebrow">Начнём с задачи</p><h2>Нужен расчёт или консультация?</h2><p>Расскажите, что требуется на объекте. Секретарь передаст заявку профильному специалисту. Стоимость определяем по составу работ, объёму и условиям объекта.</p></div><div className="contact-links"><a href="tel:+74951339013">+7 (495) 133-90-13</a><a href="mailto:info@rusvektor.ru">info@rusvektor.ru</a><span>БЦ «Полесский»<br />125367, Москва, Полесский проезд, д. 16, стр. 1, подъезд 2, этаж 2, офис 229<br /><br />ООО «РУСВЕКТОР»<br />ИНН 7702822124 · ОГРН 1137746798551<br />м. Щукинская</span></div></div></section>
     </main>
   );
 }

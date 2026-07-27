@@ -79,3 +79,42 @@
   .license-grid { gap: 14px; padding-bottom: 72px; }
   .license-card > a:first-child { height: 390px; }
 }
+
+@media (max-width: 1000px) {
+  .header { gap: 18px; }
+  .header nav { gap: 15px; }
+  .header nav a { font-size: 11px; }
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
+  .service:nth-child(3) { border-left: 1px solid #c8c8c4; }
+}
+
+@media (max-width: 480px) {
+  .shell { width: calc(100% - 28px); }
+  .hero { min-height: 640px; }
+  .brand { font-size: 15px; }
+  .brand-mark { width: 34px; height: 34px; }
+  .hero-content { padding-top: 103px; }
+  .hero h1 { font-size: clamp(41px, 12vw, 52px); letter-spacing: -2px; }
+  .hero-copy { margin: 22px 0; font-size: 15px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 13px; }
+  .button { min-height: 50px; padding-inline: 19px; }
+  .services, .projects { padding: 76px 0; }
+  .section-head { margin-bottom: 32px; }
+  .section-head h2, .calculator h2, .contacts h2 { font-size: 39px; letter-spacing: -1.8px; }
+  .service-grid { grid-template-columns: 1fr; }
+  .service { min-height: 188px; padding: 22px; }
+  .calculator { padding: 74px 0; }
+  .calc-form { padding: 20px 16px; }
+  .tabs { gap: 15px; }
+  .tabs button { font-size: 11px; }
+  .estimate { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .estimate strong { font-size: 25px; }
+  .projects .project { min-height: 230px; }
+  .safety-band { padding: 72px 0; }
+  .safety-content { width: calc(100% - 28px); margin: auto; }
+  .safety-content h2 { font-size: 40px; letter-spacing: -1.8px; }
+  .contact-grid { gap: 35px; }
+  .contact-links { gap: 13px; }
+  .contact-links a { overflow-wrap: anywhere; }
+  .contact-links span { font-size: 14px; line-height: 1.5; }
+}
