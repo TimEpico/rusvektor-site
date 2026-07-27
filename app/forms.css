@@ -49,6 +49,10 @@
   display: none;
 }
 
+.hero-image {
+  background-image: url("/hero-construction-fire.jpg");
+}
+
 .menu-toggle {
   position: relative;
   z-index: 5;

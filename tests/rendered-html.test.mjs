@@ -22,7 +22,7 @@ test("keeps the complete Русвектор landing page and contact flow", asyn
   assert.match(page, /Леруа Мерлен Ижевск/);
   assert.match(page, /Фабрика-кухня X5 Retail Group/);
   assert.match(page, /fetch\("\/api\/leads"/);
-  assert.match(css, /hero-construction-fire\.png/);
+  assert.match(forms, /hero-construction-fire\.jpg/);
   assert.match(header, /aria-expanded=\{open\}/);
   assert.match(header, /Открыть меню/);
   assert.match(forms, /@media \(max-width: 940px\)/);
@@ -30,7 +30,7 @@ test("keeps the complete Русвектор landing page and contact flow", asyn
   assert.match(services, /Расчёт пожарных рисков/);
   assert.match(services, /Техническое обслуживание и перезарядка огнетушителей/);
   assert.match(licenses, /Лицензия МЧС/);
-  assert.match(licenses, /sro-design\.png/);
+  assert.match(licenses, /sro-design\.jpg/);
   assert.doesNotMatch(page, /Your site is taking shape|Building your site/);
 });
 

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "РУСВЕКТОР — строительство и пожарная безопасность",
     description: "Строительные, инженерные и противопожарные работы под ключ.",
-    images: [{ url: "/og-rusvektor.png", width: 1731, height: 909 }],
+    images: [{ url: "/og-rusvektor.jpg", width: 1731, height: 909 }],
     locale: "ru_RU",
     type: "website",
   },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "РУСВЕКТОР — строительство и пожарная безопасность",
     description: "Строительные, инженерные и противопожарные работы под ключ.",
-    images: ["/og-rusvektor.png"],
+    images: ["/og-rusvektor.jpg"],
   },
   icons: {
     icon: "/favicon.svg",
