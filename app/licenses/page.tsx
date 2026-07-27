@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { SiteHeader } from "../components/site-header";
 
 export const metadata: Metadata = {
   title: "Лицензии — РУСВЕКТОР",
@@ -17,7 +17,7 @@ const licenses = [
 
 export default function LicensesPage() {
   return <main className="inner-page">
-    <header className="header shell"><Link className="brand" href="/"><span className="brand-mark">RV</span><span>РУСВЕКТОР<small>строительство · безопасность</small></span></Link><nav aria-label="Основная навигация"><Link href="/services">Услуги</Link><Link href="/licenses">Лицензии</Link><Link href="/#projects">Объекты</Link><Link href="/#contacts">Контакты</Link></nav><a className="phone" href="tel:+74951339013">+7 (495) 133-90-13</a></header>
+    <SiteHeader />
     <section className="inner-hero shell"><p>ДОКУМЕНТЫ</p><h1>Лицензии, сертификаты и <em>допуски</em></h1><span>Документы подтверждают право выполнять профильные работы.</span></section>
     <section className="license-grid shell">{licenses.map(([image, title, number]) => <article className="license-card" key={image}><a href={`/licenses/${image}`} target="_blank" rel="noreferrer"><img src={`/licenses/${image}`} alt={`${title}, ${number}`} /></a><h2>{title}</h2><p>{number}</p><a className="text-link" href={`/licenses/${image}`} target="_blank" rel="noreferrer">Открыть документ <span>→</span></a></article>)}</section>
     <section className="contacts"><div className="shell contact-grid"><div><p className="eyebrow">Нужны документы?</p><h2>Отправим по запросу</h2></div><div className="contact-links"><a href="mailto:info@rusvektor.ru">info@rusvektor.ru</a><a href="tel:+74951339013">+7 (495) 133-90-13</a></div></div></section>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SiteHeader } from "../components/site-header";
 
 export const metadata: Metadata = {
   title: "Услуги — РУСВЕКТОР",
@@ -27,7 +28,7 @@ const groups = [
 
 export default function ServicesPage() {
   return <main className="inner-page">
-    <header className="header shell"><Link className="brand" href="/"><span className="brand-mark">RV</span><span>РУСВЕКТОР<small>строительство · безопасность</small></span></Link><nav aria-label="Основная навигация"><Link href="/services">Услуги</Link><Link href="/licenses">Лицензии</Link><Link href="/#projects">Объекты</Link><Link href="/#contacts">Контакты</Link></nav><a className="phone" href="tel:+74951339013">+7 (495) 133-90-13</a></header>
+    <SiteHeader />
     <section className="inner-hero shell"><p>УСЛУГИ</p><h1>Работы для строительства, инженерии и <em>пожарной безопасности</em></h1><span>Выберите направление — подготовим состав работ и предварительный расчёт.</span></section>
     <section className="service-directory shell">
       {groups.map((group, index) => <article className="service-group" key={group.title}><b>0{index + 1}</b><h2>{group.title}</h2><ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul><Link className="text-link" href="/#calculator">Рассчитать задачу <span>→</span></Link></article>)}

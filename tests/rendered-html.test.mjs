@@ -6,10 +6,12 @@ import { calculateEstimate, servicesByDirection } from "../app/lib/estimate.ts";
 const root = new URL("../", import.meta.url);
 
 test("keeps the complete Русвектор landing page and contact flow", async () => {
-  const [page, layout, css, services, licenses] = await Promise.all([
+  const [page, layout, css, forms, header, services, licenses] = await Promise.all([
     readFile(new URL("app/page.tsx", root), "utf8"),
     readFile(new URL("app/layout.tsx", root), "utf8"),
     readFile(new URL("app/globals.css", root), "utf8"),
+    readFile(new URL("app/forms.css", root), "utf8"),
+    readFile(new URL("app/components/site-header.tsx", root), "utf8"),
     readFile(new URL("app/services/page.tsx", root), "utf8"),
     readFile(new URL("app/licenses/page.tsx", root), "utf8"),
   ]);
@@ -21,6 +23,10 @@ test("keeps the complete Русвектор landing page and contact flow", asyn
   assert.match(page, /Фабрика-кухня X5 Retail Group/);
   assert.match(page, /fetch\("\/api\/leads"/);
   assert.match(css, /hero-construction-fire\.png/);
+  assert.match(header, /aria-expanded=\{open\}/);
+  assert.match(header, /Открыть меню/);
+  assert.match(forms, /@media \(max-width: 940px\)/);
+  assert.match(forms, /\.header\.menu-open nav/);
   assert.match(services, /Расчёт пожарных рисков/);
   assert.match(services, /Техническое обслуживание и перезарядка огнетушителей/);
   assert.match(licenses, /Лицензия МЧС/);

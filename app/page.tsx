@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { FormEvent } from "react";
+import { SiteHeader } from "./components/site-header";
 import { calculateEstimate, servicesByDirection, type Direction } from "./lib/estimate";
 
 const services = [
@@ -69,16 +70,7 @@ export default function Home() {
   return (
     <main>
       <section className="hero" id="top">
-        <header className="header shell">
-          <a className="brand" href="#top" aria-label="РУСВЕКТОР — на главную">
-            <span className="brand-mark">RV</span>
-            <span>РУСВЕКТОР<small>строительство · безопасность</small></span>
-          </a>
-          <nav aria-label="Основная навигация">
-            <a href="/services">Услуги</a><a href="#calculator">Калькулятор</a><a href="#projects">Объекты</a><a href="/licenses">Лицензии</a><a href="#contacts">Контакты</a>
-          </nav>
-          <a className="phone" href="tel:+74951339013">+7 (495) 133-90-13</a>
-        </header>
+        <SiteHeader home />
         <div className="hero-image" />
         <div className="hero-shade" />
         <div className="shell hero-content">

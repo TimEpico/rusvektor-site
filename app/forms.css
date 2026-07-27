@@ -44,6 +44,45 @@
   overflow: hidden !important;
 }
 
+.menu-toggle,
+.mobile-call {
+  display: none;
+}
+
+.menu-toggle {
+  position: relative;
+  z-index: 5;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .28);
+  background: rgba(20, 22, 23, .55);
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  position: absolute;
+  left: 12px;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  transition: transform .25s ease, opacity .2s ease, top .25s ease;
+}
+
+.menu-toggle span:nth-child(1) { top: 14px; }
+.menu-toggle span:nth-child(2) { top: 21px; }
+.menu-toggle span:nth-child(3) { top: 28px; }
+.menu-open .menu-toggle span:nth-child(1) { top: 21px; transform: rotate(45deg); }
+.menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+.menu-open .menu-toggle span:nth-child(3) { top: 21px; transform: rotate(-45deg); }
+
+.menu-toggle:focus-visible,
+.header nav a:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 3px;
+}
+
 .inner-page { background: var(--paper); }
 .inner-page .header { max-width: none; width: 100%; padding-inline: max(24px, calc((100% - 1180px) / 2)); background: var(--ink); }
 .inner-page .header nav { margin-left: auto; }
@@ -88,11 +127,69 @@
   .service:nth-child(3) { border-left: 1px solid #c8c8c4; }
 }
 
+@media (max-width: 940px) {
+  .header { height: 76px; }
+  .header .phone { margin-left: auto; }
+  .header .menu-toggle { display: block; flex: 0 0 46px; }
+  .header nav {
+    position: absolute;
+    top: 76px;
+    left: 50%;
+    z-index: 4;
+    display: flex;
+    width: 100vw;
+    max-height: 0;
+    margin: 0;
+    padding: 0 max(22px, calc((100vw - 1180px) / 2));
+    overflow: hidden;
+    visibility: hidden;
+    transform: translateX(-50%);
+    flex-direction: column;
+    gap: 0;
+    background: rgba(21, 23, 25, .98);
+    border-bottom: 1px solid rgba(255, 255, 255, .16);
+    opacity: 0;
+    transition: max-height .32s ease, opacity .22s ease, visibility .22s ease;
+  }
+  .header.menu-open nav {
+    max-height: 520px;
+    padding-top: 15px;
+    padding-bottom: 22px;
+    visibility: visible;
+    opacity: 1;
+  }
+  .header nav a {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .header nav .mobile-call {
+    display: flex;
+    margin-top: 12px;
+    padding-inline: 18px;
+    border: 1px solid var(--yellow);
+    background: var(--yellow);
+    color: var(--ink);
+  }
+  .inner-page .header nav { margin-left: 0; }
+  .calculator-layout { grid-template-columns: 1fr; }
+  .contact-grid { gap: 48px; }
+}
+
 @media (max-width: 480px) {
   .shell { width: calc(100% - 28px); }
   .hero { min-height: 640px; }
   .brand { font-size: 15px; }
   .brand-mark { width: 34px; height: 34px; }
+  .header .phone { display: none; }
+  .header .menu-toggle { margin-left: auto; }
+  .header nav { padding-inline: 14px; }
+  .header.menu-open nav { padding-top: 10px; padding-bottom: 16px; }
+  .header nav a { min-height: 49px; font-size: 14px; }
   .hero-content { padding-top: 103px; }
   .hero h1 { font-size: clamp(41px, 12vw, 52px); letter-spacing: -2px; }
   .hero-copy { margin: 22px 0; font-size: 15px; }
@@ -117,4 +214,25 @@
   .contact-links { gap: 13px; }
   .contact-links a { overflow-wrap: anywhere; }
   .contact-links span { font-size: 14px; line-height: 1.5; }
+  .inner-hero { padding-top: 58px; }
+  .inner-hero h1 { font-size: clamp(39px, 12vw, 49px); letter-spacing: -2px; }
+  .inner-hero > span { margin-top: 22px; }
+  .license-card > a:first-child { height: min(390px, 110vw); }
+}
+
+@media (max-width: 360px) {
+  .brand { font-size: 14px; gap: 8px; }
+  .brand small { font-size: 6px; }
+  .hero h1 { font-size: 39px; }
+  .section-head h2, .calculator h2, .contacts h2 { font-size: 35px; }
+  .calc-form { padding-inline: 13px; }
+  .tabs { gap: 10px; }
+  .tabs button { font-size: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-toggle span,
+  .header nav {
+    transition: none;
+  }
 }
